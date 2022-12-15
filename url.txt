@@ -1,14 +1,19 @@
- Public Url to GitHub repository (not private)  https://github.com/MostafaAmmar88/udacity-final-project3
+ Public Url to GitHub repository (not private)[URL01]
+(https://github.com/MostafaAmmar88/udacity-final-project3)
 ****************************
-Public URL for your S3 Bucket
-(https://s3.console.aws.amazon.com/s3/buckets/udapeople-ca66f0d?region=us-east-1&tab=objects)
+Public URL for your S3 Bucket [URL02]
+(http://udapeople-c251530.s3-website-us-east-1.amazonaws.com)
 **********************
 front-end url 
-(http://udapeople-ca66f0d.s3-website-us-east-1.amazonaws.com)
+(http://udapeople-c251530.s3-website-us-east-1.amazonaws.com)
 ***********************
-cloudfront url 
-(http://d35diqz03aetry.cloudfront.net/#/employees)
+cloudfront url [URL03]
+(http://d1fa2v5xy288r5.cloudfront.net)
 ***********************
 endpoint for database 
 (udapeople-db.cdn3cx7nfqaz.us-east-1.rds.amazonaws.com)
 ****************************
+url for promethues [URL05]
+(ec2-54-152-112-147.compute-1.amazonaws.com:9090/targets)
+(http://54.152.112.147:9090/targets)
+***********************
