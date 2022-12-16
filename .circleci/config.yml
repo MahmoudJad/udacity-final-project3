@@ -236,28 +236,19 @@ jobs:
       - image: cimg/node:13.8.0
     steps:
       - checkout
-      - restore_cache:
-          keys: [backend-build]
-      - run: 
-          name: Install aws cli
-          command: |
-            #test
-            sudo apt-get update && sudo apt-get install -yy less
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-            sudo ./aws/install     
+      - install_awscli 
       - run:
           name: Run migrations
           command: |
-            cd backend 
-            npm install      
+            cd backend
+            npm install
+            npm run premigrations
             npm run migrations > migrations_dump.txt
             cat migrations_dump.txt
       - run: 
           name: Send Migration Results to kvdb.io
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
-            then
               # If you are using kvdb.io, generate the bucket ID "QiXLjuFqdc4npU5sWTadrH" in your local terminal first
               curl -d '1' https://kvdb.io/QiXLjuFqdc4npU5sWTadrH/migration_${CIRCLE_WORKFLOW_ID:0:7}  
             fi
@@ -293,10 +284,10 @@ jobs:
             cd frontend
             npm run build
             aws s3 cp dist s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7} --recursive
-      - destroy-environment:
-          Workflow_ID: ${CIRCLE_WORKFLOW_ID:0:7}
-      - revert-migrations:
-          Workflow_ID: ${CIRCLE_WORKFLOW_ID:0:7}        
+      # - destroy-environment:
+      #     Workflow_ID: ${CIRCLE_WORKFLOW_ID:0:7}
+      # - revert-migrations:
+      #     Workflow_ID: ${CIRCLE_WORKFLOW_ID:0:7}        
                     
   deploy-backend:
     docker:
