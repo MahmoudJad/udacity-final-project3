@@ -242,17 +242,9 @@ jobs:
                cd backend
                npm install
                npm run premigrations
-               npm run migrations > migrations_dump.txt
+               npm run migrations 
 
-        - run: 
-            name: Send Migration Results to kvdb.io
-            command: |
-              if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
-              then
-                curl -d '1' https://kvdb.io/${KVDB_BUCKET}/old_workflow_id 
-              fi  
-        - revert-migrations
-        - destroy-environment   
+  
       
   deploy-frontend:
     docker:
