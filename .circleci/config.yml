@@ -245,12 +245,15 @@ jobs:
             sudo apt-get update && sudo apt-get install -yy less
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
-            sudo ./aws/install     
+            sudo ./aws/install 
+      - restore_cache:
+          keys: [backend-build]
+      - attach_workspace:
+          at: ~/    
       - run:
           name: Run migrations
           command: |
-            cd backend 
-            npm install      
+            cd backend       
             npm run migrations > migrations_dump.txt
             cat migrations_dump.txt
       - run: 
