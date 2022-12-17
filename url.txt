@@ -2,18 +2,15 @@
 (https://github.com/MostafaAmmar88/udacity-final-project3)
 ****************************
 Public URL for your S3 Bucket [URL02]
-(http://udapeople-c251530.s3-website-us-east-1.amazonaws.com)
+(http://udapeople-0ff7dae.s3.amazonaws.com/index.html)
 **********************
-front-end url 
-(http://udapeople-c251530.s3-website-us-east-1.amazonaws.com)
-***********************
 cloudfront url [URL03]
-(http://d1fa2v5xy288r5.cloudfront.net)
+(http://d3kk9g7od1k3u9.cloudfront.net)
 ***********************
 endpoint for database 
 (udapeople-db.cdn3cx7nfqaz.us-east-1.rds.amazonaws.com)
 ****************************
 url for promethues [URL05]
-(ec2-54-152-112-147.compute-1.amazonaws.com:9090/targets)
-(http://54.152.112.147:9090/targets)
+(ec2-18-234-144-183.compute-1.amazonaws.com:9090/targets)
+(http://http://18.234.144.183/:9090/targets)
 ***********************
