@@ -1,0 +1,16 @@
+Public Url to GitHub repository:
+https://github.com/MahmoudJad/udacity-final-project3
+---------------------------
+Public URL for your S3 Bucket 
+http://udapeople-7c94830.s3.amazonaws.com/index.html
+---------------------------
+cloudfront url 
+http://d3ojhghdcst1bo.cloudfront.net
+--------------------------
+endpoint for database 
+udapeople-db.cdn3cx7nfqaz.us-east-1.rds.amazonaws.com
+--------------------------
+url for promethues 
+ec2-44-204-183-182.compute-1.amazonaws.com:9090/targets
+http://44.204.183.182:9090/targets
+--------------------------
